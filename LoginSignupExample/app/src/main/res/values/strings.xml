@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">LoginSignupExample</string>
+    <string name="login_title">Login/Signup</string>
+    <string name="login_description">login page where you can login into existing system</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+</resources>
