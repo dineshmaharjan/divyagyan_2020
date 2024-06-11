@@ -1,62 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_margin="16dp">
 
-    <ImageView
-        android:id="@+id/loginGraphicImageView"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:src="@drawable/login_graphic" />
+        android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/loginSignupTextView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/loginGraphicImageView"
-        android:layout_marginTop="48dp"
-        android:text="@string/login_title"
-        android:textAlignment="center"
-        android:textColor="@color/red"
-        android:textSize="24sp"
-        android:textStyle="bold" />
+        <ImageView
+            android:id="@+id/loginGraphicImageView"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:src="@drawable/login_graphic" />
 
-    <TextView
-        android:id="@+id/loginDescriptionTextView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/loginSignupTextView"
-        android:layout_marginTop="8dp"
-        android:padding="4dp"
-        android:text="@string/login_description"
-        android:textAlignment="center"
-        android:textSize="18sp" />
+        <TextView
+            android:id="@+id/loginSignupTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/loginGraphicImageView"
+            android:layout_marginTop="48dp"
+            android:text="@string/login_title"
+            android:textAlignment="center"
+            android:textColor="@color/red"
+            android:textSize="24sp"
+            android:textStyle="bold" />
 
-    <EditText
-        android:id="@+id/userNameEditText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_below="@id/loginDescriptionTextView"
-        android:hint="@string/username" />
+        <TextView
+            android:id="@+id/loginDescriptionTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/loginSignupTextView"
+            android:layout_marginTop="8dp"
+            android:padding="4dp"
+            android:text="@string/login_description"
+            android:textAlignment="center"
+            android:textSize="18sp" />
 
-    <EditText
-        android:id="@+id/passwordEditText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:inputType="textPassword"
-        android:layout_below="@id/userNameEditText"
-        android:hint="@string/password" />
+        <EditText
+            android:id="@+id/userNameEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/loginDescriptionTextView"
+            android:layout_marginTop="16dp"
+            android:maxLines="1"
+            android:hint="@string/username" />
 
-    <Button
-        android:id="@+id/loginButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:layout_below="@id/passwordEditText"
-        android:text="@string/login"
-        android:textAllCaps="false" />
+        <EditText
+            android:id="@+id/passwordEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/userNameEditText"
+            android:layout_marginTop="16dp"
+            android:hint="@string/password"
+            android:maxLines="1"
+            android:inputType="textPassword" />
 
-</RelativeLayout>
+        <Button
+            android:id="@+id/loginButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/passwordEditText"
+            android:layout_marginTop="24dp"
+            android:text="@string/login"
+            android:backgroundTint="@color/red"
+            android:textAllCaps="false" />
+
+    </RelativeLayout>
+</ScrollView>
