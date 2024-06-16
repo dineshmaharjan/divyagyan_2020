@@ -43,8 +43,8 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/loginDescriptionTextView"
             android:layout_marginTop="16dp"
-            android:maxLines="1"
-            android:hint="@string/username" />
+            android:hint="@string/username"
+            android:maxLines="1" />
 
         <EditText
             android:id="@+id/passwordEditText"
@@ -53,8 +53,8 @@
             android:layout_below="@id/userNameEditText"
             android:layout_marginTop="16dp"
             android:hint="@string/password"
-            android:maxLines="1"
-            android:inputType="textPassword" />
+            android:inputType="textPassword"
+            android:maxLines="1" />
 
         <Button
             android:id="@+id/loginButton"
@@ -62,9 +62,20 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/passwordEditText"
             android:layout_marginTop="24dp"
-            android:text="@string/login"
             android:backgroundTint="@color/red"
+            android:text="@string/login"
             android:textAllCaps="false" />
 
+
+        <TextView
+            android:id="@+id/signupTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/loginButton"
+            android:layout_marginTop="8dp"
+            android:text="Don't have an account? Signup"
+            android:textAlignment="center"
+            android:textColor="@color/red"
+            android:textStyle="bold"/>
     </RelativeLayout>
 </ScrollView>

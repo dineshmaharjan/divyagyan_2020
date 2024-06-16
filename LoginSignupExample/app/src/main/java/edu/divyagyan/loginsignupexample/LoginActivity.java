@@ -1,5 +1,6 @@
 package edu.divyagyan.loginsignupexample;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -11,12 +12,15 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class LoginActivity extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity  implements  View.OnClickListener{
 
     private EditText userNameEditText;
     private EditText passwordEditText;
 
     private Button loginButton;
+
+    private TextView signupTextView;
+
 
 
     @Override
@@ -28,6 +32,8 @@ public class LoginActivity extends AppCompatActivity {
         userNameEditText = findViewById(R.id.userNameEditText);
         passwordEditText = findViewById(R.id.passwordEditText);
         loginButton = findViewById(R.id.loginButton);
+        signupTextView = findViewById(R.id.signupTextView);
+
 
 
         loginButton.setOnClickListener(new View.OnClickListener() {
@@ -55,7 +61,17 @@ public class LoginActivity extends AppCompatActivity {
         });
 
 
+        signupTextView.setOnClickListener(this);
+
+
     }
 
 
+    @Override
+    public void onClick(View v) {
+
+        Intent intent = new Intent(LoginActivity.this, SignupActivity.class);
+        startActivity(intent);
+
+    }
 }
