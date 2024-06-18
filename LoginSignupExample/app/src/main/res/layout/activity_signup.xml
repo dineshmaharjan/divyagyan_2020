@@ -52,6 +52,7 @@
             android:inputType="textPassword" />
 
         <RadioGroup
+            android:id="@+id/genderRadioGroup"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -92,10 +93,13 @@
             android:text="Terms and Conditions" />
 
         <Button
+            android:id="@+id/signupButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
             android:backgroundTint="@color/red"
-            android:text="@string/submit" />
+            android:text="@string/submit"
+            android:textAllCaps="false"
+            />
     </LinearLayout>
 </ScrollView>
