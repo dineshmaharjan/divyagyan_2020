@@ -1,11 +1,14 @@
 package edu.divyagyan.menuexample;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
+import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -13,28 +16,38 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements MenuItem.OnMenuItemClickListener {
 
 
     private TextView contextMenuTextView;
+    private Button popupMenuButton;
 
 
-
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         contextMenuTextView = findViewById(R.id.helloTextView);
+        popupMenuButton = findViewById(R.id.popupMenuButton);
         registerForContextMenu(contextMenuTextView);
-        contextMenuTextView.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View v) {
-                Toast.makeText(MainActivity.this, "onLognPressed", Toast.LENGTH_SHORT).show();
 
-                return true;
+        popupMenuButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                PopupMenu popupMenu = new PopupMenu(MainActivity.this,v);
+                MenuInflater inflater =popupMenu.getMenuInflater();
+                inflater.inflate(R.menu.menu, popupMenu.getMenu());
+
+                popupMenu.setOnMenuItemClickListener(this);
+
+                popupMenu.show();
+
+
             }
         });
+
     }
 
 
@@ -89,5 +102,12 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "Cut menu item selected", Toast.LENGTH_LONG).show();
         }
         return true;
+    }
+
+    @Override
+    public boolean onMenuItemClick(@NonNull MenuItem item) {
+
+
+        return false;
     }
 }
