@@ -28,6 +28,7 @@ public class MainFragment extends Fragment {
       return view;
     }
 
+1
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
