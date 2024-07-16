@@ -1,8 +1,11 @@
 package edu.divyagyan.listviewexmpales;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -23,5 +26,13 @@ public class SimpleListViewActivity extends AppCompatActivity {
         listView = findViewById(R.id.simpleListView);
         arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, datas);
         listView.setAdapter(arrayAdapter);
+
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Toast.makeText(SimpleListViewActivity.this, "Clicked "+datas[position], Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }
