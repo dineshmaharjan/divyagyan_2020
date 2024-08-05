@@ -26,6 +26,8 @@
 
         <activity android:name=".SimpleListViewActivity"/>
         <activity android:name=".CustomListViewActivity"/>
+        <activity android:name=".SimpleGridViewExample"/>
+        <activity android:name=".CustomGridViewActivity"/>
 
     </application>
 
